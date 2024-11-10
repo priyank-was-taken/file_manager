@@ -26,9 +26,12 @@ SECRET_KEY = 'django-insecure-+i_in8#4$7xl^yrutfm*ukq@jey7$f_c)ihj(fclv00d_$q9@v
 DEBUG = False
 
 ALLOWED_HOSTS = ['3.91.93.135', 'localhost', '127.0.0.1', '*']
+CORS_ORIGIN_ALLOW_ALL = True
+
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'file_manager.urls'
@@ -108,6 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 
 # Internationalization
